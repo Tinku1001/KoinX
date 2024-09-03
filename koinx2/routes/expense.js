@@ -30,7 +30,8 @@ router.get("/get-expenses", async (req, res) => {
       .status(200)
       .json({ totalExpenses, currentEthereumPrice: ethereumPrice.price });
   } catch (error) {
-    console.error("Error calculating expenses:", error); // Log error for debugging
+    console.error("Error calculating expenses:", error);
+
     return res.status(500).json({ error: "Failed to calculate expenses." });
   }
 });
